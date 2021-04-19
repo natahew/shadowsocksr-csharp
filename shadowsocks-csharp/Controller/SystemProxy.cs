@@ -226,7 +226,7 @@ namespace Shadowsocks.Controller
 
             // Get total length of INTERNET_PER_CONN_OPTIONs
             int len = 0;
-            foreach(INTERNET_PER_CONN_OPTION option in _optionlist)
+            foreach (INTERNET_PER_CONN_OPTION option in _optionlist)
             {
                 len += Marshal.SizeOf(option);
             }
@@ -612,7 +612,7 @@ namespace Shadowsocks.Controller
                         {
                             case "DEFAULTCONNECTIONSETTINGS":
                             case "SAVEDLEGACYSETTINGS":
-                            //case "LAN CONNECTION":
+                                //case "LAN CONNECTION":
                                 continue;
                             default:
                                 //set all the connections's proxy as the lan

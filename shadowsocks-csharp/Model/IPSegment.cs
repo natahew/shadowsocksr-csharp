@@ -53,7 +53,7 @@ namespace Shadowsocks.Model
             if (AddressFamily == System.Net.Sockets.AddressFamily.InterNetworkV6)
                 return this;
             byte[] b1 = GetAddressBytes();
-            byte[] br = new byte[16] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0xff, 0xff, 0, 0, 0, 0};
+            byte[] br = new byte[16] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0xff, 0xff, 0, 0, 0, 0 };
             b1.CopyTo(br, 12);
             return new IPAddressCmp(br);
         }
@@ -124,7 +124,7 @@ namespace Shadowsocks.Model
                 }
                 ++index;
                 bool keep = false;
-                while(index < list.Count)
+                while (index < list.Count)
                 {
                     int cmp = (list.GetKey(index) as IPAddressCmp).CompareTo(e);
                     if (cmp >= 0)

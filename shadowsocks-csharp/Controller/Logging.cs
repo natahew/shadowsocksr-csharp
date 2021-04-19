@@ -245,7 +245,7 @@ namespace Shadowsocks.Controller
         public static void Log(LogLevel level, object s)
         {
             UpdateLogFile();
-            var strMap = new []{
+            var strMap = new[]{
                 "Debug",
                 "Info",
                 "Warn",

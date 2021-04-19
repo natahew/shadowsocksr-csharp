@@ -1648,7 +1648,7 @@ namespace Shadowsocks.Controller
                         ResetTimeout(cfg.TTL);
                     }
                     int send_len = RemoteSend(connetionRecvBuffer, bytesRead);
-                    if (!( send_len == 0 && bytesRead > 0) )
+                    if (!(send_len == 0 && bytesRead > 0))
                         doConnectionRecv();
                 }
                 else

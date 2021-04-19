@@ -81,7 +81,8 @@ namespace Shadowsocks.Model
                 {
                     using (StreamReader stream = File.OpenText(absFilePath))
                     {
-                        using (StreamWriter out_stream = new StreamWriter(File.OpenWrite(CHN_FILENAME))) {
+                        using (StreamWriter out_stream = new StreamWriter(File.OpenWrite(CHN_FILENAME)))
+                        {
                             while (true)
                             {
                                 string line = stream.ReadLine();

@@ -55,10 +55,10 @@ namespace Shadowsocks
                     return;
                 }
 #endif
-                Directory.SetCurrentDirectory(Application.StartupPath);
-                //#if !DEBUG
-                Logging.OpenLogFile();
-                //#endif
+            Directory.SetCurrentDirectory(Application.StartupPath);
+            //#if !DEBUG
+            Logging.OpenLogFile();
+            //#endif
 #if !_CONSOLE
                 int try_times = 0;
                 while (Configuration.Load() == null)
@@ -75,13 +75,13 @@ namespace Shadowsocks
                     try_times += 1;
                 }
 #endif
-                _controller = new ShadowsocksController();
-                HostMap.Instance().LoadHostFile();
+            _controller = new ShadowsocksController();
+            HostMap.Instance().LoadHostFile();
 #if !_CONSOLE
                 _viewController = new MenuViewController(_controller);
 #endif
 
-                _controller.Start();
+            _controller.Start();
 
 #if !_CONSOLE
                 //Util.Utils.ReleaseMemory();

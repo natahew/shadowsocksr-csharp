@@ -1068,7 +1068,7 @@ namespace Shadowsocks.Obfs
                     {
                         send_len = TrapezoidRandomInt(Math.Min(datalength - 1, Server.tcp_mss - overhead) - 1, -0.3) + 1;  // must less than datalength
 #else
-            if (datalength > 120 * 4 && pack_id < 64 )
+            if (datalength > 120 * 4 && pack_id < 64)
             {
                 int send_len = LinearRandomInt(datalength + 120 * 4);
                 if (send_len < datalength)

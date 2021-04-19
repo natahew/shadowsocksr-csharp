@@ -58,7 +58,7 @@ namespace Shadowsocks.Encryption
             public byte[] ComputeHash(byte[] buffer, int offset, int count)
             {
                 byte[] output = new byte[64];
-                ss_hmac_ex(MBEDTLS_MD_SHA1, key, key.Length, buffer,offset, count, output);
+                ss_hmac_ex(MBEDTLS_MD_SHA1, key, key.Length, buffer, offset, count, output);
                 return output;
             }
         }

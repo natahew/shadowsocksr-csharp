@@ -219,7 +219,7 @@ namespace Shadowsocks.Model
                             if (selServer != null)
                                 return selServer.group == server.group;
                             return false;
-                        } , true);
+                        }, true);
                     }
                     else
                     {
@@ -777,7 +777,7 @@ namespace Shadowsocks.Model
             if (--saveCounter <= 0)
             {
                 saveCounter = 256;
-                if ((DateTime.Now - saveTime).TotalMinutes > 10 )
+                if ((DateTime.Now - saveTime).TotalMinutes > 10)
                 {
                     lock (servers)
                     {
@@ -798,7 +798,7 @@ namespace Shadowsocks.Model
             if (--saveCounter <= 0)
             {
                 saveCounter = 256;
-                if ((DateTime.Now - saveTime).TotalMinutes > 10 )
+                if ((DateTime.Now - saveTime).TotalMinutes > 10)
                 {
                     lock (servers)
                     {

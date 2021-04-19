@@ -38,7 +38,7 @@ namespace Shadowsocks.Model
         protected int GetLevel(int size)
         {
             int ret = 0;
-            for (int s = size; s > 1; s >>=1)
+            for (int s = size; s > 1; s >>= 1)
             {
                 ret++;
             }

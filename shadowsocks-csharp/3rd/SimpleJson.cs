@@ -1305,11 +1305,11 @@ namespace SimpleJson
                 else
                 {
                     if (type == typeof(Guid))
-                        obj= default(Guid);
-                    else if(ReflectionUtils.IsNullableType(type) && Nullable.GetUnderlyingType(type) == typeof(Guid))
+                        obj = default(Guid);
+                    else if (ReflectionUtils.IsNullableType(type) && Nullable.GetUnderlyingType(type) == typeof(Guid))
                         obj = null;
                     else
-                        obj = str;                    
+                        obj = str;
                 }
             }
             else if (value is bool)
@@ -1318,7 +1318,7 @@ namespace SimpleJson
                 obj = null;
             else if (value is long && typeof(Enum).IsAssignableFrom(type))
             {
-                obj = Enum.ToObject(type, (long) value);
+                obj = Enum.ToObject(type, (long)value);
             }
             else if ((value is long && type == typeof(long)) || (value is double && type == typeof(double)))
                 obj = value;
@@ -1458,7 +1458,7 @@ namespace SimpleJson
             else if (input is Font)
             {
                 var cvt = new FontConverter();
-                output = cvt.ConvertToInvariantString((Font) input);
+                output = cvt.ConvertToInvariantString((Font)input);
             }
             else
             {
@@ -1774,7 +1774,7 @@ namespace SimpleJson
 
                 return (GetHandler)dynamicGet.CreateDelegate(typeof(GetHandler));
 #else
-                return delegate(object instance) { return fieldInfo.GetValue(instance); };
+                return delegate (object instance) { return fieldInfo.GetValue(instance); };
 #endif
             }
 
@@ -1796,7 +1796,7 @@ namespace SimpleJson
 
                 return (SetHandler)dynamicSet.CreateDelegate(typeof(SetHandler));
 #else
-                return delegate(object instance, object value) { fieldInfo.SetValue(instance, value); };
+                return delegate (object instance, object value) { fieldInfo.SetValue(instance, value); };
 #endif
             }
 
@@ -1825,7 +1825,7 @@ namespace SimpleJson
 #if NETFX_CORE
                 return delegate(object instance) { return getMethodInfo.Invoke(instance, new Type[] { }); };
 #else
-                return delegate(object instance) { return getMethodInfo.Invoke(instance, Type.EmptyTypes); };
+                return delegate (object instance) { return getMethodInfo.Invoke(instance, Type.EmptyTypes); };
 #endif
 #endif
             }
@@ -1852,7 +1852,7 @@ namespace SimpleJson
                 setGenerator.Emit(OpCodes.Ret);
                 return (SetHandler)dynamicSet.CreateDelegate(typeof(SetHandler));
 #else
-                return delegate(object instance, object value) { setMethodInfo.Invoke(instance, new[] { value }); };
+                return delegate (object instance, object value) { setMethodInfo.Invoke(instance, new[] { value }); };
 #endif
             }
 

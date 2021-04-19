@@ -406,7 +406,7 @@ namespace Shadowsocks.Model
                 //if (ssr.Success)
                 //    data = ssr.Groups[1].Value;
                 //else
-                    throw new FormatException();
+                throw new FormatException();
             }
             if (match == null || !match.Success)
                 throw new FormatException();

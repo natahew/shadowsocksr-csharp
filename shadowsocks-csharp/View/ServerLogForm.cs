@@ -135,7 +135,7 @@ namespace Shadowsocks.View
         {
             this.Text = title_perfix + I18N.GetString("ServerLog") + "("
                 + (controller.GetCurrentConfiguration().shareOverLan ? "any" : "local") + ":" + controller.GetCurrentConfiguration().localPort.ToString()
-                + "(" + Model.Server.GetForwardServerRef().GetConnections().Count.ToString()+ ")"
+                + "(" + Model.Server.GetForwardServerRef().GetConnections().Count.ToString() + ")"
                 + " " + I18N.GetString("Version") + UpdateChecker.FullVersion
                 + ")";
         }

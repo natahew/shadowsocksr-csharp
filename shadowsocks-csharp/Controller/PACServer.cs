@@ -49,7 +49,7 @@ namespace Shadowsocks.Controller
                 string proxy = null;
                 foreach (string line in lines)
                 {
-                    string[] kv = line.Split(new char[]{':'}, 2);
+                    string[] kv = line.Split(new char[] { ':' }, 2);
                     if (kv.Length == 2)
                     {
                         if (kv[0] == "Host")
@@ -183,7 +183,7 @@ namespace Shadowsocks.Controller
                 if (_config.pacDirectGoProxy && _config.proxyEnable)
                 {
                     if (_config.proxyType == 0)
-                        pac = pac.Replace("__DIRECT__", "SOCKS5 " + _config.proxyHost + ":" +  _config.proxyPort.ToString() + ";DIRECT;");
+                        pac = pac.Replace("__DIRECT__", "SOCKS5 " + _config.proxyHost + ":" + _config.proxyPort.ToString() + ";DIRECT;");
                     else if (_config.proxyType == 1)
                         pac = pac.Replace("__DIRECT__", "PROXY " + _config.proxyHost + ":" + _config.proxyPort.ToString() + ";DIRECT;");
                 }
